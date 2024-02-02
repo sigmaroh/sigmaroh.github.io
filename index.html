@@ -1,59 +1,269 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Sanjay Raut</title>
-		<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<html lang="en">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Raut's Resume</title>
+    
+   <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        @media print {
+            body{
+                width: 21cm;
+                height: 29.7cm;
+                margin: 30mm 45mm 30mm 45mm; 
+                /* change the margins as you want them to be. */
+           } 
+        }
 
+        section {
+           max-width: 950px;
+            margin: 10px auto;
+            background-color: #fff;
+            padding: 30px;
+            //border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+		.skill_education {width:100%;display: contents;}
+        .left-column,
+        .right-column {
+            width: calc(50% - 15px);
+        }
 
-	</head>
-	<body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    		<ul>
-        		<li><a href="http://sanjayraut.com.np" target="_blank">Home</a></li>
-	        	<li><a href="http://sanjayraut.com.np/home" target="_blank">About</a></li>
-        		<li><a href="http://sanjayraut.com.np/cv" target="_blank">CV</a></li>
-        		<li><a href="http://blog.sanjayraut.com.np" target="_blank">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-		    		<div class="blurb">
-		        		<div class="card">
-						  <img src="https://pbs.twimg.com/profile_images/965648359271759872/EQnWg4o6_400x400.jpg" alt="Sanjay" style="width:100%">
-						  <h1>Sanjay Raut</h1>
-						  <p class="title">Computer Engineer</p>
-						  <p>Kathmandu,Nepal</p>
-						  <div style="margin: 24px 0;">
-						    <a href="#"><i class="fa fa-dribbble"></i></a> 
-						    <a href="#"><i class="fa fa-twitter"></i></a>  
-						    <a href="#"><i class="fa fa-linkedin"></i></a>  
-						    <a href="#"><i class="fa fa-facebook"></i></a> 
-						 </div>
-						 <p><button>Contact</button></p>
-					</div>
-		    		</div><!-- /.blurb -->
-	    		</div>
-    		</div>
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:isanjayraut@gmail.com">email</a></li>
-        		<li><a href="https://github.com/smilingsenti" target="_blank">github.com/smilingsenti</a></li>
-			</ul>
-		</footer>
+        h1,
+        h2,
+        h3 {
+            color: #2C3E50;
+            width:100%;
+            margin-bottom:0px;
+            
+        }
 
-		<!-- scripts -->
-		<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-		<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	</body>
+        h1 {
+            margin-bottom: 20px;
+            text-align:center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        p,
+        ul,
+        li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        .contact {
+        text-align: center;
+    width: 100%;
+    margin-top: 0px;}
+        
+    </style>
+
+</head>
+<body>
+    <section>
+        <h1>Sanjay Raut</h1>
+        <p class="contact">Email: <a href="mailto:isanjayraut@gmail.com">isanjayraut@gmail.com</a> | LinkedIn:
+            <a href="https://linkedin.com/in/sanjay-raut">https://linkedin.com/in/sanjay-raut</a> | Phone:
+            +977-986-0811-194</p>
+
+        <h2>PROFILE</h2>
+        <p>I am a NodeJs/PHP Developer with over 7 years of experience in software development. I have both functional
+            and technical expertise in creating and enhancing web applications.</p>
+
+        <h2>WORK EXPERIENCE</h2>
+        <h3>Sr. Node developer - Sep 2020 – Present</h3>
+        <p>E.K. Solutions Pvt Ltd., Lalitpur</p>
+        <ul>
+            <li>Leading small team of backend developers</li>
+            <li>Involving in timeline, sprint planning, and providing technical guidance</li>
+            <li>Conducting code refactoring and reviewed work of junior developers and colleagues</li>
+            <li>Mentoring and training for junior developers/Interns.</li>
+            <li>Developing, maintaining, and optimizing web apps/apis.</li>
+        </ul>
+
+        <h3>Mid. Laravel Developer - Oct 2017- Sep 2020</h3>
+        <p>E.K Solutions Pvt Ltd., Lalitpur</p>
+        <ul>
+            <li>Developed/Maintained/Optimized Query for php/laravel based web apps</li>
+            <li>Worked under the supervision of Sr. developer for partial modules issue fixing</li>
+            <li>Learned frontend frameworks and Node js</li>
+        </ul>
+
+        <h3>PHP developer - Dec,2017- Oct 2017</h3>
+        <p>Algebra Inc, (Passionboard)</p>
+        <ul>
+            <li>Solely responsible for developing and enhancing the startup-based app, Passionboard</li>
+        </ul>
+
+        <h3>Intern - Verisk IT, Kathmandu</h3>
+        <p>Completed the final year major project under the supervision of a senior software engineer, following Agile
+            methodologies.</p>
+
+        <h2>OTHER EXPERIENCE / CERTIFICATION</h2>
+        <ul>
+            <li>Volunteer (2011), Organizer of instant coding competition(2012), Web design competition (2013) at LOCUS
+                Technological Festival.</li>
+            <li>Data entry specialist at Cloud Factory.</li>
+            <li>Workshop on Open Source Technologies (OST), IOE FOSS Community</li>
+        </ul>
+
+        <h2>PROJECTS</h2>
+        <h3>Reputation Stacker(US)</h3>
+        <p>Reputation Stacker is a web-based app that offers services for analyzing reviews from various review sites and
+            running campaigns to collect reviews.</p>
+        <ul>
+            <li>Managed the backend team as a Senior Software Developer.</li>
+            <li>Participated in Project planning, provided technical guidance.</li>
+            <li>Developed REST APIs to support frontend functionalities.</li>
+            <li>Integrated third-party APIs such as Stripe, Auth0, Datashake, Outscrapper, Rebrandly, and Twilio.</li>
+        </ul>
+
+        <h3>Basestation CRM (US)</h3>
+        <p>Basestation is a US based CRM project focused on marketing products using campaigns and surveys and making
+            deals with customers going through different pipelines. This project is developed using monorepo
+            microservice architecture using nest js framework.</p>
+        <ul>
+            <li>Conducted code reviews and managed deployment processes.</li>
+            <li>Created REST API services dedicated to quotes, invoices, and billing functionalities.</li>
+            <li>Integrated Auth0 for centralized login,Stripe Connect, PayPal, AWS S3 bucket, and AWS SES Services</li>
+        </ul>
+
+<h3>Insurance Portal (Online)</h3>
+<p>An online portal for creating, renewing, and claiming insurance.</p>
+<ul>
+    <li>Implemented RabbitMQ for queue processing within the system.</li>
+    <li>Developed APIs specifically catering to the frontend functionalities.</li>
+</ul>
+
+<h3>My Place-IWI (NP)</h3>
+<p>Apartment and Properties management system.</p>
+<ul>
+    <li>Implemented view/materialized view tables to facilitate reporting and custom filtering.</li>
+    <li>Integrated Google Drive API to manage folders and files within the project.</li>
+    <li>Implemented RabbitMQ for queue processing within the system.</li>
+</ul>
+
+<h3>Bloom HR System (JP)</h3>
+<p>A career registration system that allows individuals considering a career change to receive direct information and individual contact from companies they are interested in.</p>
+<ul>
+    <li>Developed and maintained APIs for both client and jobseeker panels.</li>
+    <li>Optimized queries and managed batch job processing for improved performance.</li>
+    <li>Addressed and resolved timeout issues arising from concurrent user interactions within the system.</li>
+</ul>
+
+<h3>Test Case Management System(NP)</h3>
+<p>Test Case Management Software was an in-house project developed for QA. The aim of the project was to keep track of all the test plans and test cases performed by QA during the project.</p>
+<ul>
+    <li>Led the planning and development of most system modules from the ground up.</li>
+    <li>Conducted code refactoring and reviewed the work of other developers to ensure quality and consistency within the project.</li>
+</ul>
+
+<h3>Koklass(Ordering and Delivery)(NP)</h3>
+<p>Koklass, a cloud-based mobile e-commerce platform optimized for rapid sales catalog setup, inventory and price management, order taking and delivery operations.</p>
+<ul>
+    <li>Maintaining and upgrading an existing application to ensure it runs smoothly and stays up-to-date.</li>
+    <li>Optimizing queries and refactoring code for better performance and maintainability.</li>
+    <li>Developing applications for multiple vendors by reusing existing components and functionalities.</li>
+</ul>
+
+<h3>Yurstore(US)</h3>
+<p>Yurstore is a multi-vendor ecommerce platform that collaborates with multiple companies. Through this platform, companies have the ability to order products from a wide range of brands while seamlessly incorporating custom or corporate logos and branding texts in various positions on the products.</p>
+<ul>
+    <li>Maintaining and resolving issues related to existing features within the application.</li>
+    <li>Planning and developing new features to enhance the application's functionality.</li>
+    <li>Optimizing queries within the system to improve performance and efficiency.</li>
+</ul>
+
+<h3>Delivr(Final Year Major Project)</h3>
+<p>An efficient and managed delivery planning system for e-commerce in Kathmandu valley through mobile and the web application.</p>
+
+        <!-- ... other projects ... -->
+		<div class="skill_education">
+        <div class="left-column">
+            <h2>SKILLS</h2>
+            <p>Languages: Javascript, PHP</p>
+            <p>Databases: MySQL, Postgres, MongoDB</p>
+            <p>Framework: Laravel, Express, Nest, AdonisJs, Bootstrap</p>
+            <p>Platforms: Windows, Linux</p>
+            <p>Others: Git, Gitlab, Grpc, Redis, Rabbitmq</p>
+        </div>
+
+        <div class="right-column">
+            <h2>EDUCATION</h2>
+            <p>Bachelors, Computer Engineering - 2016<br>
+                TU, Institute of Engineering, Pulchowk Campus, Nepal</p>
+            <p>Higher Secondary - 2010<br>
+                HSEB, Advance Academy, Nepal</p>
+        </div>
+        </div>
+
+        <h2>REFERENCE</h2>
+        <p>Jeetendra Maharjan<br>
+            Team Lead, Ekbana Solutions Pvt. Ltd.<br>
+            Email: <a href="mailto:jeetendra@ekbana.com">jeetendra@ekbana.com</a><br>
+            Phone: +977-9851134886</p>
+    </section>
+    <button onclick="downloadPdf()">Download as PDF</button>
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+<script>
+        function downloadPdf() {
+            const element = document.body; // Select the entire page
+
+            html2pdf(element, {
+                margin: 10,
+                filename: 'Sanjay_Raut_Resume.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 2
+                },
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait'
+                }
+            }).then(pdf => {
+                // Save the PDF to a file or open it in a new window
+                pdf.save();
+            });
+        }
+    </script>
+</body>
+
 </html>
