@@ -90,6 +90,17 @@
     margin-top: 0px;}
         
     </style>
+	<style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    canvas {
+      display: block;
+    }
+  </style>
 
 </head>
 <body>
@@ -237,6 +248,8 @@
             Phone: +977-9851134886</p>
 	    -->
     </section>
+
+	 <canvas id="fireworksCanvas"></canvas>
     <button onclick="downloadPdf()">Download as PDF</button>
     <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 
@@ -264,6 +277,127 @@
                 pdf.save();
             });
         }
+
+	const canvas = document.getElementById('fireworksCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Add these styles to ensure the canvas takes up full screen with no scrollbars
+canvas.style.position = 'fixed';
+canvas.style.top = '0';
+canvas.style.left = '0';
+canvas.style.margin = '0';
+canvas.style.padding = '0';
+
+// Add resize event listener to keep canvas fullscreen
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+class Firework {
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.radius = Math.random() * 2 + 1; // Reduced radius range from 2-6 to 1-3
+    this.alpha = 1;
+    this.velocity = {
+      x: 0,
+      y: 0
+    };
+  }
+
+  draw() {
+    ctx.save();
+    ctx.globalAlpha = this.alpha;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.restore();
+  }
+
+  update() {
+    this.x += this.velocity.x;
+    this.y += this.velocity.y;
+    this.alpha -= 0.01;
+  }
+}
+
+let fireworks = [];
+
+function createFirework(x, y) {
+  const colors = [
+    '#FF0000', // Red
+    '#FFA500', // Orange
+    '#FFD700', // Gold
+    '#00FF00', // Lime
+    '#00FFFF', // Cyan
+    '#0000FF', // Blue
+    '#4B0082', // Indigo
+    '#8A2BE2', // Blue Violet
+    '#FF1493', // Deep Pink
+    '#FF4500', // Orange Red
+    '#FFB6C1', // Light Pink
+    '#98FB98', // Pale Green
+    '#DDA0DD', // Plum
+    '#F0E68C'  // Khaki
+  ];
+  const particleCount = 200;
+
+  for (let i = 0; i < particleCount; i++) {
+    // Calculate angle and speed for spherical burst
+    const angle = (Math.PI * 2 * i) / particleCount;
+    const velocity = 3 + Math.random() * 1.5; // Increased velocity range from 2-3 to 3-4.5
+    
+    // Get random color for each particle
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    const firework = new Firework(x, y, color);
+    // Set velocity for spherical movement
+    firework.velocity.x = Math.cos(angle) * velocity;
+    firework.velocity.y = Math.sin(angle) * velocity;
+    fireworks.push(firework);
+  }
+}
+
+function animate() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  fireworks = fireworks.filter(firework => {
+    // Check if particle hits screen boundaries and bounce
+    if (firework.x < 0 || firework.x > canvas.width) {
+      firework.velocity.x *= -1;
+    }
+    if (firework.y < 0 || firework.y > canvas.height) {
+      firework.velocity.y *= -1;
+    }
+    
+    return firework.alpha > 0;
+  });
+
+  fireworks.forEach(firework => {
+    firework.update();
+    firework.draw();
+  });
+
+  // Randomly create new fireworks
+  if (Math.random() < 0.03) { // 3% chance each frame to create a new firework
+    const randomX = Math.random() * canvas.width;
+    const randomY = Math.random() * canvas.height;
+    createFirework(randomX, randomY);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+// Remove click event listener since we're doing automatic fireworks
+animate();
+
     </script>
 </body>
 
