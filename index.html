@@ -394,7 +394,9 @@ function animate() {
 
   requestAnimationFrame(animate);
 }
-
+canvas.addEventListener('click', (event) => {
+  createFirework(event.clientX, event.clientY);
+});
 // Remove click event listener since we're doing automatic fireworks
 animate();
 
